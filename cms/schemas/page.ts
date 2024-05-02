@@ -38,6 +38,15 @@ export default defineType({
         defineArrayMember({
           name: 'featuredCats',
           type: 'featuredCats',
+        }),
+        defineArrayMember({
+          name: 'howItWorks',
+          type: 'howItWorks',
+        })
+        ,
+        defineArrayMember({
+          name: 'stats',
+          type: 'stats',
         })
       ],
     }),

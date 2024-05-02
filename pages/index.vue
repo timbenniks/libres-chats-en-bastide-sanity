@@ -7,4 +7,5 @@ const { data, encodeDataAttribute } = await useGetContentForType({
 <template>
   <GlobalHeader :large="true" />
   <RenderPage :data="data" :encodeDataAttribute="encodeDataAttribute" />
+  <GlobalFooter />
 </template>

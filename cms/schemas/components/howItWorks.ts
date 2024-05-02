@@ -1,9 +1,9 @@
 import { defineField, defineType } from 'sanity'
 
 export default defineType({
-  name: 'hero',
+  name: 'howItWorks',
   type: 'object',
-  title: 'Hero',
+  title: 'How It Works',
   fields: [
     defineField({
       name: 'heading',
@@ -14,16 +14,38 @@ export default defineType({
       type: 'string',
     }),
     defineField({
-      name: 'image',
-      type: 'image',
-      options: { hotspot: true },
-      fields: [
-        defineField({
-          name: 'alt',
-          type: 'string',
-          title: 'Alternative text',
+      name: 'steps',
+      title: 'Steps',
+      type: 'array',
+      validation: (Rule) => Rule.max(3).warning('You can add up to 3 steps'),
+      of: [
+        defineType({
+          name: 'step',
+          title: 'Step',
+          type: 'object',
+          preview: {
+            select: {
+              title: 'name',
+              image: 'image',
+            },
+            prepare({ title, image }) {
+              return {
+                title: title || 'Untitled',
+                media: image,
+              }
+            },
+          },
+          fields: [
+            defineField({ name: 'step', title: 'Step', type: 'number' }),
+            defineField({ name: 'name', title: 'Name', type: 'string' }),
+            defineField({
+              name: 'image',
+              type: 'image',
+              options: { hotspot: true },
+            }),
+          ]
         }),
-      ],
+      ]
     }),
 
     defineField({
@@ -47,13 +69,10 @@ export default defineType({
   preview: {
     select: {
       title: 'heading',
-      image: 'image',
     },
-    prepare({ title, image }) {
+    prepare({ title }) {
       return {
         title: title || 'Untitled',
-        subtitle: 'Hero',
-        media: image,
       }
     },
   },

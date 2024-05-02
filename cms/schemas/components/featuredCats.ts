@@ -24,7 +24,24 @@ export default defineType({
         }
       ],
       validation: (Rule) => Rule.max(3).warning('You can only select up to 3 cats')
-    }
+    },
+    defineField({
+      name: 'ctas',
+      title: 'Calls To Action',
+      type: 'array',
+      of: [
+        defineType({
+          name: 'cta',
+          title: 'Call To Action',
+          type: 'object',
+          fields: [
+            defineField({ name: 'url', type: 'reference', to: [{ type: 'page' }], title: 'URL' }),
+            defineField({ name: 'label', type: 'string', title: 'Label' }),
+            defineField({ name: 'secondary', type: 'boolean', title: 'Secondary Button' })
+          ]
+        })
+      ]
+    }),
   ],
   preview: {
     select: {

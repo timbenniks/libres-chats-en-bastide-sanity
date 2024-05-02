@@ -11,4 +11,20 @@
     width: 100%;
     height: auto;
   }
+
+  .cta {
+    @apply px-4 py-2 bg-blue font-bold rounded-xl border-2 border-blue text-white !no-underline uppercase text-center;
+  }
+
+  .cta:hover {
+    @apply bg-lightBlue text-blue border-blue;
+  }
+
+  .cta.secondary {
+    @apply bg-transparent text-black !underline border-none;
+  }
+
+  .cta.secondary:hover {
+    @apply text-blue;
+  }
 }

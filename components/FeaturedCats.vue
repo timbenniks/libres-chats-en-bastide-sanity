@@ -3,10 +3,10 @@ defineProps(["encodeDataAttribute", "heading", "description", "cats"]);
 </script>
 
 <template>
-  <div class="mb-12 px-24">
+  <div class="mb-12 px-12 md:px-24">
     <h3
       v-if="heading"
-      class="font-serif text-blue text-4xl mb-2 max-w-[600px]"
+      class="font-serif text-blue text-4xl mb-2 max-w-[600px] text-center md:text-left"
       :data-sanity="encodeDataAttribute?.(['heading'])"
     >
       {{ heading }}
@@ -14,7 +14,7 @@ defineProps(["encodeDataAttribute", "heading", "description", "cats"]);
 
     <p
       v-if="description"
-      class="mb-4 max-w-[600px]"
+      class="mb-4 max-w-[600px] text-center md:text-left"
       :data-sanity="encodeDataAttribute?.(['description'])"
     >
       {{ description }}
