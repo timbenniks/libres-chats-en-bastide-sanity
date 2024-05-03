@@ -9,7 +9,7 @@ export default {
       },
       fontFamily: {
         sans: ["Inter"],
-        serif: ["Afterglow"],
+        serif: ["Afterglow", "Georgia"],
       },
     },
   },

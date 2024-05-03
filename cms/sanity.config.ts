@@ -1,8 +1,7 @@
 import { defineConfig } from 'sanity'
 import { structureTool } from 'sanity/structure'
-import { visionTool } from '@sanity/vision'
 import { schemaTypes } from './schemas'
-// import { frFRLocale } from '@sanity/locale-fr-fr'
+import { frFRLocale } from '@sanity/locale-fr-fr'
 import { presentationTool } from 'sanity/presentation'
 
 export default defineConfig({
@@ -14,17 +13,16 @@ export default defineConfig({
 
   plugins: [
     structureTool(),
-    visionTool(),
     presentationTool({
       previewUrl: {
-        origin: 'http://localhost:3000',
+        origin: process.env.NUXT_ORIGIN_URL || 'http://localhost:3000',
         previewMode: {
           enable: '/preview/enable',
           disable: '/preview/disable',
         },
       },
     }),
-    //frFRLocale()
+    frFRLocale()
   ],
 
   schema: {

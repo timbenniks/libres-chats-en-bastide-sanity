@@ -2,8 +2,11 @@
 
 ## TODO
 
+- mobile nav with hamburger menu
 - Pages
-  - cat page
-  - cats page
-  - how to adopt page
-  - about us page
+  - D'ACCUEIL
+  - CHATS​​​​‌
+  - FAIR UN DON​​​​‌‌
+  - NOTRE ASSO​​​​‌
+  - NOUS AIDER​​​​‌
+  - CONTACT

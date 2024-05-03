@@ -14,6 +14,11 @@ export default defineType({
       type: 'string',
     }),
     defineField({
+      name: 'small',
+      title: 'Small Version',
+      type: 'boolean',
+    }),
+    defineField({
       name: 'image',
       type: 'image',
       options: { hotspot: true },
