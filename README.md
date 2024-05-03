@@ -2,11 +2,6 @@
 
 ## TODO
 
-- Components
-  - rich text component
-  - image componenrt
-    - standalone
-    - inline
 - Pages
   - cat page
   - cats page

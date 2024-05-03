@@ -3,6 +3,7 @@ import post from './post'
 import cat from './cat'
 import family from './family'
 import page from './page'
+import navigation from './navigation'
 import hero from './components/hero'
 import singleImage from './components/singleImage'
 import featuredCats from './components/featuredCats'
@@ -23,5 +24,6 @@ export const schemaTypes = [
   howItWorks,
   stats,
   richText,
-  twoColumn
+  twoColumn,
+  navigation
 ]

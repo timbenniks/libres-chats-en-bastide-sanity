@@ -1,5 +1,7 @@
 <script setup lang="ts">
 defineProps(["large"]);
+
+const navigation = await useNavigation();
 </script>
 <template>
   <div>
@@ -30,12 +32,12 @@ defineProps(["large"]);
         class="flex space-x-8 overflow-x-auto overflow-y-none whitespace-nowrap"
         :class="large ? 'justify-start md:justify-center ' : 'justify-start'"
       >
-        <li><nuxt-link to="/">D'accueil</nuxt-link></li>
-        <li><nuxt-link to="/about">Chats</nuxt-link></li>
-        <li><nuxt-link to="/about">Fair un don</nuxt-link></li>
-        <li><nuxt-link to="/about">Notre Asso</nuxt-link></li>
-        <li><nuxt-link to="/about">Nous Aider</nuxt-link></li>
-        <li><nuxt-link to="/about">Contact</nuxt-link></li>
+        <li v-for="page in navigation.pages" :key="page._key">
+          <nuxt-link
+            :to="page.internalUrl === 'home' ? '/' : page.internalUrl"
+            >{{ page.menuLabel }}</nuxt-link
+          >
+        </li>
       </ul>
     </nav>
   </div>

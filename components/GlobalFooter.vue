@@ -1,5 +1,5 @@
 <script setup lang="ts">
-defineProps(["large"]);
+const navigation = await useNavigation();
 </script>
 <template>
   <div>
@@ -12,12 +12,12 @@ defineProps(["large"]);
       <ul
         class="justify-start md:justify-center ml-4 md:ml-0 flex space-x-8 overflow-x-auto overflow-y-none whitespace-nowrap mb-6 uppercase font-bold"
       >
-        <li><nuxt-link to="/">D'accueil</nuxt-link></li>
-        <li><nuxt-link to="/about">Chats</nuxt-link></li>
-        <li><nuxt-link to="/about">Fair un don</nuxt-link></li>
-        <li><nuxt-link to="/about">Notre Asso</nuxt-link></li>
-        <li><nuxt-link to="/about">Nous Aider</nuxt-link></li>
-        <li><nuxt-link to="/about">Contact</nuxt-link></li>
+        <li v-for="page in navigation.pages" :key="page._key">
+          <nuxt-link
+            :to="page.internalUrl === 'home' ? '/' : page.internalUrl"
+            >{{ page.menuLabel }}</nuxt-link
+          >
+        </li>
       </ul>
 
       <p class="mb-1">&copy; 2024 Libres Chats en Bastide</p>
