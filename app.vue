@@ -33,7 +33,6 @@ useJsonld({
 
 <template>
   <div class="mx-auto max-w-[1440px]">
-    <!-- <PreviewModeBanner /> -->
     <NuxtPage />
   </div>
 </template>
