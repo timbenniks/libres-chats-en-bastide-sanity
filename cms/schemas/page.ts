@@ -42,11 +42,18 @@ export default defineType({
         defineArrayMember({
           name: 'howItWorks',
           type: 'howItWorks',
-        })
-        ,
+        }),
         defineArrayMember({
           name: 'stats',
           type: 'stats',
+        }),
+        defineArrayMember({
+          name: 'richText',
+          type: 'richText',
+        }),
+        defineArrayMember({
+          name: 'twoColumn',
+          type: 'twoColumn',
         })
       ],
     }),

@@ -33,7 +33,7 @@ export default defineType({
     },
     prepare({ title }) {
       return {
-        title: title || 'Untitled',
+        title: `Stats: ${title || 'Untitled'}`,
       }
     },
   },

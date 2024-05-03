@@ -10,7 +10,7 @@ export async function useGetContentForType(properties: Props) {
     title,
     description,
     image,
-    components[]{
+    components[] {
       _type == "hero" => {
         _type,
         heading,
@@ -24,6 +24,13 @@ export async function useGetContentForType(properties: Props) {
           label,
           secondary
         }
+      },
+      _type == "twoColumn" => {
+        _type,
+        heading,
+        description,
+        sideA,
+        sideB
       },
       _type == "singleImage" => {
         _type,
@@ -52,6 +59,11 @@ export async function useGetContentForType(properties: Props) {
       _type == "stats" => {
         _type,
         statBlocks
+      },
+      _type == "richText" => {
+        _type,
+        heading,
+        richText,
       },
       _type == "featuredCats" => {
         _type,

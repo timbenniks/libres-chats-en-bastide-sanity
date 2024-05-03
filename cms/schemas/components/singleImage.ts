@@ -11,11 +11,6 @@ export default defineType({
       title: 'Title',
     }),
     defineField({
-      name: 'standaloneImage',
-      type: 'boolean',
-      title: 'Standalone Image'
-    }),
-    defineField({
       name: 'image',
       type: 'image',
       options: { hotspot: true },
@@ -35,7 +30,7 @@ export default defineType({
     },
     prepare({ title, image }) {
       return {
-        title: title || 'Untitled',
+        title: `Single Image: ${title || 'Untitled'}`,
         media: image,
       }
     },

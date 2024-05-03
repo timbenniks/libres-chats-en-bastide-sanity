@@ -51,8 +51,7 @@ export default defineType({
     },
     prepare({ title, image }) {
       return {
-        title: title || 'Untitled',
-        subtitle: 'Hero',
+        title: `Hero: ${title || 'Untitled'}`,
         media: image,
       }
     },

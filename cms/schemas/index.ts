@@ -8,6 +8,8 @@ import singleImage from './components/singleImage'
 import featuredCats from './components/featuredCats'
 import howItWorks from './components/howItWorks'
 import stats from './components/stats'
+import richText from './components/richText'
+import twoColumn from './components/twoColumn'
 
 export const schemaTypes = [
   post,
@@ -19,5 +21,7 @@ export const schemaTypes = [
   singleImage,
   featuredCats,
   howItWorks,
-  stats
+  stats,
+  richText,
+  twoColumn
 ]

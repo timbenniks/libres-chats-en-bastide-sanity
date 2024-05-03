@@ -20,7 +20,7 @@ defineProps(["large"]);
         <li><nuxt-link to="/about">Contact</nuxt-link></li>
       </ul>
 
-      <p class="mb-1">&copy; 2024 Libres Chats en Bastide.</p>
+      <p class="mb-1">&copy; 2024 Libres Chats en Bastide</p>
       <p class="text-xs">
         <a href="tel:+33768093304">+33 7 68 09 33 04</a><br />4 Place Saint Jean
         12200 Villefrance-de-Rouerge
