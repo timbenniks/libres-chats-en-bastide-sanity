@@ -8,15 +8,15 @@ export function getAge(birthDate: string) {
   let result = '';
 
   if (weeks <= 8 && months < 12 && years < 1) {
-    result = `${weeks} weeks`
+    result = `${weeks} semaines`
   }
 
   if (weeks > 8 && months < 12 && years < 1) {
-    result = `${months} months`
+    result = `${months} mois`
   }
 
   if (years >= 1) {
-    result = `${years} years`
+    result = `${years} ans`
   }
 
   return result

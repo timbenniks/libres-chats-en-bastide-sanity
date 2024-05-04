@@ -8,9 +8,13 @@ const age = computed(() => {
 
 const cta = computed(() => {
   return {
-    label: "More Info",
+    label: "Plus d'infos",
     secondary: false,
   };
+});
+
+const sex = computed(() => {
+  return props.cat.sex;
 });
 </script>
 
@@ -35,10 +39,9 @@ const cta = computed(() => {
       </nuxt-link>
     </h4>
     <p class="uppercase font-bold text-sm mb-6">
-      {{ age }} old, <template v-if="cat.sterilised">sterilised, </template>
-      {{ cat.sex }}
+      {{ age }}, <template v-if="cat.sterilised">stérilisée, </template>
+      {{ sex }}
     </p>
-
     <Cta :cta="cta" :url="`/cats/${cat._id}`" />
   </div>
 </template>

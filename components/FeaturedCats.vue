@@ -1,5 +1,5 @@
 <script setup lang="ts">
-defineProps(["encodeDataAttribute", "heading", "description", "cats"]);
+defineProps(["encodeDataAttribute", "heading", "description", "cats", "ctas"]);
 </script>
 
 <template>
@@ -27,6 +27,12 @@ defineProps(["encodeDataAttribute", "heading", "description", "cats"]);
         :data-sanity="encodeDataAttribute?.([index, 'cat'])"
         :key="cat._id"
       />
+    </div>
+
+    <div
+      class="flex space-y-2 sm:space-x-2 sm:space-y-0 flex-col sm:flex-row mt-4"
+    >
+      <Cta v-for="cta in ctas" :key="cta.label" :cta="cta" />
     </div>
   </div>
 </template>
