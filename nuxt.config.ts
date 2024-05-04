@@ -9,9 +9,9 @@ export default defineNuxtConfig({
     "nuxt-jsonld"
   ],
 
-  routeRules: {
-    '/**': { isr: false },
-  },
+  // routeRules: {
+  //   '/**': { isr: false },
+  // },
 
   sanity: {
     globalHelper: true,

@@ -1,5 +1,12 @@
 <script setup lang="ts">
-defineProps(["encodeDataAttribute", "heading", "description", "image", "ctas"]);
+defineProps([
+  "encodeDataAttribute",
+  "heading",
+  "description",
+  "image",
+  "ctas",
+  "small",
+]);
 </script>
 
 <template>
@@ -18,6 +25,7 @@ defineProps(["encodeDataAttribute", "heading", "description", "image", "ctas"]);
     <article
       class="mt-4 md:mt-0 md:absolute left-24 top-2/4 md:-translate-y-2/4 md:max-w-[500px] px-12 md:px-0 text-center md:text-left"
     >
+      <p>Small: {{ small }}</p>
       <h1
         v-if="heading"
         class="font-serif text-blue text-4xl md:text-5xl mb-2 md:max-w-[500px]"
