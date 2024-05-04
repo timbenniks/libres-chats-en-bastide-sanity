@@ -30,7 +30,8 @@ export default defineType({
     },
     prepare({ title, image }) {
       return {
-        title: `Single Image: ${title || 'Untitled'}`,
+        title: `${title || 'Untitled'}`,
+        subtitle: 'Single Image component',
         media: image,
       }
     },

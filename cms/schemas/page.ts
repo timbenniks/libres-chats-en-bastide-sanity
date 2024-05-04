@@ -58,4 +58,18 @@ export default defineType({
       ],
     }),
   ],
+  preview: {
+    select: {
+      title: 'title',
+      subtitle: 'slug',
+      image: 'image'
+    },
+    prepare({ title, subtitle, image }) {
+      return {
+        title: `${title || 'Untitled'}`,
+        subtitle: `/${subtitle.current}`,
+        media: image,
+      }
+    },
+  },
 })

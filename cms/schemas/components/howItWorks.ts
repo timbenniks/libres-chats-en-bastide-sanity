@@ -69,10 +69,13 @@ export default defineType({
   preview: {
     select: {
       title: 'heading',
+      step0: 'steps.0.image',
     },
-    prepare({ title }) {
+    prepare({ title, step0 }) {
       return {
-        title: `How it works: ${title || 'Untitled'}`,
+        title: `${title || 'Untitled'}`,
+        subtitle: "How It Works component",
+        media: step0,
       }
     },
   },

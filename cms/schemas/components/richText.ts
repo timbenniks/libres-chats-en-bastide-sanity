@@ -21,7 +21,8 @@ export default defineType({
     },
     prepare({ title }) {
       return {
-        title: `Rich Text: ${title || 'Untitled'}`,
+        title: `${title || 'Untitled'}`,
+        subtitle: "Rich Text component",
       }
     },
   },

@@ -30,10 +30,18 @@ export default defineType({
   preview: {
     select: {
       title: 'title',
+      stat0: 'statBlocks.0.name',
+      stat1: 'statBlocks.1.name',
+      stat2: 'statBlocks.2.name',
+      stat3: 'statBlocks.3.name'
     },
-    prepare({ title }) {
+    prepare({ title, stat0, stat1, stat2, stat3 }) {
+      const stats = [stat0, stat1, stat2, stat3].filter(Boolean)
+
+      const subtitle = stats.length > 0 && stats.join(', ')
       return {
-        title: `Stats: ${title || 'Untitled'}`,
+        title: `${title || 'Untitled'}`,
+        subtitle: `Stats component. Selected: ${subtitle}`
       }
     },
   },

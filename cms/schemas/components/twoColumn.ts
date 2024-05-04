@@ -49,10 +49,13 @@ export default defineType({
   preview: {
     select: {
       title: 'heading',
+      sideA: 'sideA.0._type',
+      sideB: 'sideB.0._type'
     },
-    prepare({ title }) {
+    prepare({ title, sideA, sideB }) {
       return {
-        title: `Two Column: ${title || 'Untitled'}`,
+        title: `${title || 'Untitled'}`,
+        subtitle: `Two Column compontent. Side A: ${sideA}, Side B: ${sideB}`
       }
     },
   },

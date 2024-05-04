@@ -25,7 +25,6 @@
     "styled-components": "^6.1.8"
   },
   "devDependencies": {
-    "@sanity/vision": "3.32.0",
     "@types/react": "18.2.64",
     "@types/styled-components": "5.1.34"
   }

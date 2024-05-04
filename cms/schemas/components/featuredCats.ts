@@ -46,12 +46,18 @@ export default defineType({
   preview: {
     select: {
       title: 'heading',
-      image: 'image',
+      cat0: 'cats.0.name',
+      cat1: 'cats.1.name',
+      cat2: 'cats.2.name',
+      image: 'cats.0.images'
     },
-    prepare({ title, image }) {
+    prepare({ title, cat0, cat1, cat2, image }) {
+      const cats = [cat0, cat1, cat2].filter(Boolean)
+      const subtitle = cats.length > 0 && cats.join(', ')
       return {
-        title: `Featured Cats: ${title || 'Untitled'}`,
-        media: image,
+        title: `${title || 'Untitled'}`,
+        subtitle: `Featured Cats component. Selected: ${subtitle}`,
+        media: image[0]
       }
     },
   },
