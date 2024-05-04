@@ -13,11 +13,10 @@ import richText from './components/richText'
 import twoColumn from './components/twoColumn'
 
 export const schemaTypes = [
-  post,
-  blockContent,
+  page,
   cat,
   family,
-  page,
+  post,
   hero,
   singleImage,
   featuredCats,
@@ -25,5 +24,7 @@ export const schemaTypes = [
   stats,
   richText,
   twoColumn,
-  navigation
+  navigation,
+  blockContent,
+
 ]
