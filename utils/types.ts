@@ -1,5 +1,9 @@
 export type CatFilters = {
-  chipped?: boolean;
+  withDogs?: boolean;
+  withCats?: boolean;
+  sex?: string;
+  color?: string;
+  date?: string;
 };
 
 export type Cat = {

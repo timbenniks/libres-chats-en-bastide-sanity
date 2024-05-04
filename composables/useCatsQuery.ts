@@ -18,18 +18,14 @@ function buildCatQuery(filters: CatFilters): string {
   const query = groq`
     *[_type == "cat"
     ${filters.name ? `&& name match $name` : ''}
-    ${filters.chipped !== undefined ? `&& chipped == $chipped` : ''}
-    ${filters.certificateHealthy !== undefined ? `&& certificateHealthy == $certificateHealthy` : ''}
-    ${filters.healthBook !== undefined ? `&& healthBook == $healthBook` : ''}
-    ${filters.sterilised !== undefined ? `&& sterilised == $sterilised` : ''}
     ${filters.withDogs !== undefined ? `&& withDogs == $withDogs` : ''}
     ${filters.withCats !== undefined ? `&& withCats == $withCats` : ''}
-    ${filters.reserved !== undefined ? `&& reserved == $reserved` : ''}
-    ${filters.adopted !== undefined ? `&& adopted == $adopted` : ''}
-    ${filters.deceased !== undefined ? `&& deceased == $deceased` : ''}
     ${filters.sex ? `&& sex == $sex` : ''}
-    ${filters.color ? `&& color match $color` : ''}
-    ${filters.deedOfTransfer !== undefined ? `&& deedOfTransfer == $deedOfTransfer` : ''}
+    ${filters.color ? `&& color match $color` : ''},
+    // geboorte datum range
+    //  - < 6 maanden
+    //  - tussen 6 en 12 maanden
+    //  - > 1 jaar
     ]`;
 
   return query;

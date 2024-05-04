@@ -16,6 +16,7 @@ export async function useGetContentForType(properties: Props) {
         heading,
         description,
         image,
+        small,
         ctas[] {
           url->{
             _id,
@@ -81,11 +82,9 @@ export async function useGetContentForType(properties: Props) {
           _id,
           name,
           birthDate,
-          chipped,
           sterilised,
           sex,
-          images,
-          treatments
+          images
         }
       }
     },

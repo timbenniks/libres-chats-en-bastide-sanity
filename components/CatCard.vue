@@ -20,15 +20,19 @@ const sex = computed(() => {
 
 <template>
   <div class="bg-yellow rounded-lg p-4 pb-6">
-    <nuxt-link :to="`/cats/${cat._id}`">
+    <nuxt-link
+      :to="`/cats/${cat._id}`"
+      class="block bg-black bg-opacity-5 aspect-[396/310] mb-2 rounded-lg"
+    >
       <nuxt-img
+        v-if="cat.images"
         provider="sanity"
         :src="cat.images[0].asset._ref"
         width="396"
         height="310"
         sizes="sm:30vw"
         loading="lazy"
-        class="rounded-lg mb-2"
+        class="rounded-lg"
         fit="crop"
       />
     </nuxt-link>

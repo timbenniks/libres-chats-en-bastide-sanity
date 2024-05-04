@@ -15,7 +15,7 @@ export default defineType({
       title: 'Birth Date',
       type: 'date',
       options: {
-        dateFormat: 'DD-MM-YYYY',
+        dateFormat: 'YYYY-MM-DD',
       },
     }),
     defineField({
@@ -23,7 +23,7 @@ export default defineType({
       title: 'Adoption Date',
       type: 'date',
       options: {
-        dateFormat: 'DD-MM-YYYY',
+        dateFormat: 'YYYY-MM-DD',
       },
     }),
     defineField({
@@ -103,7 +103,7 @@ export default defineType({
       title: 'Arrival Date',
       type: 'date',
       options: {
-        dateFormat: 'DD-MM-YYYY',
+        dateFormat: 'YYYY-MM-DD',
       },
     }),
     defineField({
@@ -116,7 +116,7 @@ export default defineType({
       title: 'Protocol Date',
       type: 'date',
       options: {
-        dateFormat: 'DD-MM-YYYY',
+        dateFormat: 'YYYY-MM-DD',
       },
     }),
     defineField({
@@ -162,7 +162,7 @@ export default defineType({
           type: 'object',
           fields: [
             defineField({ name: 'value', title: 'Weight (gr)', type: 'number' }),
-            defineField({ name: 'date', title: 'Date Recorded', type: 'date', options: { dateFormat: 'DD-MM-YYYY' } })
+            defineField({ name: 'date', title: 'Date Recorded', type: 'date', options: { dateFormat: 'YYYY-MM-DD' } })
           ]
         })
       ]
@@ -177,7 +177,7 @@ export default defineType({
           title: 'Tests',
           type: 'object',
           fields: [
-            defineField({ name: 'date', title: 'Date', type: 'date', options: { dateFormat: 'DD-MM-YYYY' } }),
+            defineField({ name: 'date', title: 'Date', type: 'date', options: { dateFormat: 'YYYY-MM-DD' } }),
             defineField({
               name: 'testType',
               title: 'Test Type',
@@ -224,7 +224,7 @@ export default defineType({
           title: 'Treatment',
           type: 'object',
           fields: [
-            defineField({ name: 'date', title: 'Date', type: 'date', options: { dateFormat: 'DD-MM-YYYY' } }),
+            defineField({ name: 'date', title: 'Date', type: 'date', options: { dateFormat: 'YYYY-MM-DD' } }),
 
             defineField({
               name: 'treatmentType',

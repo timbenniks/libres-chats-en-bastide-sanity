@@ -3,6 +3,8 @@ import { structureTool } from 'sanity/structure'
 import { schemaTypes } from './schemas'
 import { frFRLocale } from '@sanity/locale-fr-fr'
 import { presentationTool } from 'sanity/presentation'
+import { visionTool } from '@sanity/vision'
+
 import {
   dashboardTool,
   projectUsersWidget,
@@ -32,6 +34,7 @@ export default defineConfig({
       },
     }),
     frFRLocale(),
+    visionTool(),
     dashboardTool({
       widgets: [
         projectInfoWidget(),
