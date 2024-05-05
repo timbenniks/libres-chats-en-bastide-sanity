@@ -50,7 +50,9 @@ const filtered = computed(() => {
   <GlobalHeader :large="true" />
   <RenderPage :data="page" :encodeDataAttribute="encodeDataAttribute" />
 
-  <div class="w-full bg-lightBlue py-4 -mt-12 px-24 flex space-x-2">
+  <div
+    class="w-full bg-lightBlue py-4 md:-mt-12 px-4 md:px-24 flex space-y-4 md:space-y-0 md:space-x-4 flex-col md:flex-row"
+  >
     <FilterCheckBox for="withDogs" label="OK CHIEN">
       <input
         id="withDogs"
@@ -72,7 +74,7 @@ const filtered = computed(() => {
     <FilterSelect>
       <select
         v-model="filters.sex"
-        class="w-32 px-2 appearance-none forced-colors:appearance-auto row-start-1 col-start-1 rounded-lg bg-blue text-white font-bold uppercase"
+        class="w-full md:w-32 md:py-0 py-2 px-2 appearance-none forced-colors:appearance-auto row-start-1 col-start-1 rounded-lg bg-blue text-white font-bold uppercase"
       >
         <option selected value="">Sexe</option>
         <option value="male">Mâle</option>
@@ -83,7 +85,7 @@ const filtered = computed(() => {
     <FilterSelect>
       <select
         v-model="filters.color"
-        class="w-32 px-2 appearance-none forced-colors:appearance-auto row-start-1 col-start-1 rounded-lg bg-blue text-white font-bold uppercase"
+        class="w-full md:w-32 md:py-0 py-2 px-2 appearance-none forced-colors:appearance-auto row-start-1 col-start-1 rounded-lg bg-blue text-white font-bold uppercase"
       >
         <option selected value="">couleur</option>
         <option :value="color" v-for="color in colors" :key="color">
@@ -115,7 +117,7 @@ const filtered = computed(() => {
 
   <div
     v-if="data && data.length > 0"
-    class="grid grid-cols-1 md:grid-cols-3 gap-8 my-12 px-24"
+    class="grid grid-cols-1 md:grid-cols-3 gap-8 my-4 md:my-12 px-4 md:px-24"
   >
     <cat-card
       v-for="(cat, index) in data"
