@@ -34,7 +34,7 @@ const navigation = await useNavigation();
       >
         <li v-for="page in navigation.pages" :key="page._key">
           <nuxt-link
-            :to="page.internalUrl === 'home' ? '/' : page.internalUrl"
+            :to="page.internalUrl === 'home' ? '/' : `/${page.internalUrl}`"
             >{{ page.menuLabel }}</nuxt-link
           >
         </li>

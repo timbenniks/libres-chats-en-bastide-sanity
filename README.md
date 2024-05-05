@@ -2,11 +2,10 @@
 
 ## TODO
 
-- mobile nav with hamburger menu
+- Mobile nav with hamburger menu
+- Cat page
+- SEO meta
 - Pages
-  - D'ACCUEIL
-  - CHATS​​​​‌
-  - FAIR UN DON​​​​‌‌
   - NOTRE ASSO​​​​‌
   - NOUS AIDER​​​​‌
   - CONTACT
