@@ -13,6 +13,7 @@ defineProps(["step", "index", "encodeDataAttribute"]);
       loading="lazy"
       class="absolute w-full h-full opacity-30 rounded-xl"
       fit="crop"
+      :alt="step.name"
     />
 
     <p
@@ -22,7 +23,7 @@ defineProps(["step", "index", "encodeDataAttribute"]);
       {{ step.step }}
     </p>
     <p
-      class="absolute right-4 bottom-4 leading-none font-serif text-blue text-2xl"
+      class="absolute right-4 bottom-4 leading-none font-serif text-blue text-2xl max-w-60 text-right"
     >
       {{ step.name }}
     </p>

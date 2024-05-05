@@ -6,17 +6,30 @@ defineProps([
   "image",
   "ctas",
   "small",
+  "nospace",
+  "darkImageUsed",
 ]);
 </script>
 
 <template>
-  <div class="md:aspect-[1440/548] relative mb-12">
+  <div
+    :class="{
+      'md:aspect-[1440/350]': small,
+      'md:aspect-[1440/548]': !small,
+      'mb-12': !nospace,
+      'mb-0': nospace,
+    }"
+    class="relative"
+  >
     <nuxt-img
+      v-if="image"
       provider="sanity"
       :src="image.asset._ref"
       width="1440"
-      height="548"
+      :alt="image.asset.alt || heading || ''"
+      :height="small ? '350' : '548'"
       sizes="sm:100vw"
+      fit="crop"
       loading="eager"
       class="md:absolute w-full h-auto"
       :data-sanity="encodeDataAttribute?.(['image'])"
@@ -25,15 +38,16 @@ defineProps([
     <article
       class="mt-4 md:mt-0 md:absolute left-24 top-2/4 md:-translate-y-2/4 md:max-w-[500px] px-12 md:px-0 text-center md:text-left"
     >
-      <p>Small: {{ small }}</p>
       <h1
         v-if="heading"
-        class="font-serif text-blue text-4xl md:text-5xl mb-2 md:max-w-[500px]"
+        class="font-serif text-4xl md:text-5xl mb-2 md:max-w-[500px]"
+        :class="darkImageUsed ? 'text-white' : 'text-blue'"
         :data-sanity="encodeDataAttribute?.(['heading'])"
       >
         {{ heading }}
       </h1>
       <p
+        :class="darkImageUsed ? 'text-white' : 'text-black'"
         v-if="description"
         :data-sanity="encodeDataAttribute?.(['description'])"
       >

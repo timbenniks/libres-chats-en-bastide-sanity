@@ -47,7 +47,7 @@ const filtered = computed(() => {
 </script>
 
 <template>
-  <GlobalHeader :large="true" />
+  <GlobalHeader :large="false" />
   <RenderPage :data="page" :encodeDataAttribute="encodeDataAttribute" />
 
   <div
@@ -117,7 +117,7 @@ const filtered = computed(() => {
 
   <div
     v-if="data && data.length > 0"
-    class="grid grid-cols-1 md:grid-cols-3 gap-8 my-4 md:my-12 px-4 md:px-24"
+    class="grid grid-cols-1 md:grid-cols-3 gap-8 my-4 px-4 md:px-24"
   >
     <cat-card
       v-for="(cat, index) in data"

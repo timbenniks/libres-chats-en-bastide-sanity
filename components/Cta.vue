@@ -12,7 +12,7 @@ const to = computed(() => {
   <nuxt-link
     v-if="to || url"
     class="cta"
-    :class="{ secondary: cta.secondary }"
+    :class="{ secondary: cta.secondary, light: cta.onDarkBackground }"
     :to="url ? url : to"
   >
     {{ cta.label }}

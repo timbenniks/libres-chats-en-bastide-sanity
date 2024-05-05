@@ -20,8 +20,20 @@
     @apply bg-lightBlue text-blue border-blue;
   }
 
+  .cta.light {
+    @apply bg-yellow border-yellow text-black;
+  }
+
+  .cta.light:hover {
+    @apply opacity-90;
+  }
+
   .cta.secondary {
     @apply bg-transparent text-black !underline border-none;
+  }
+
+  .cta.secondary.light {
+    @apply bg-transparent text-white !underline border-none;
   }
 
   .cta.secondary:hover {

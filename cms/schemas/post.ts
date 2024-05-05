@@ -25,7 +25,7 @@ export default defineType({
       title: 'Main image',
       type: 'image',
       options: {
-        hotspot: true,
+        hotspot: false,
       },
     }),
 

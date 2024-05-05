@@ -41,7 +41,7 @@ export default defineType({
             defineField({
               name: 'image',
               type: 'image',
-              options: { hotspot: true },
+              options: { hotspot: false },
             }),
           ]
         }),
@@ -60,7 +60,8 @@ export default defineType({
           fields: [
             defineField({ name: 'url', type: 'reference', to: [{ type: 'page' }], title: 'URL' }),
             defineField({ name: 'label', type: 'string', title: 'Label' }),
-            defineField({ name: 'secondary', type: 'boolean', title: 'Secondary Button' })
+            defineField({ name: 'secondary', type: 'boolean', title: 'Secondary Button' }),
+            defineField({ name: 'onDarkBackground', type: 'boolean', title: 'On Dark Background' })
           ]
         })
       ]

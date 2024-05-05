@@ -17,13 +17,16 @@ export async function useGetContentForType(properties: Props) {
         description,
         image,
         small,
+        nospace,
+        darkImageUsed,
         ctas[] {
           url->{
             _id,
             slug
           },
           label,
-          secondary
+          secondary,
+          onDarkBackground
         }
       },
       _type == "twoColumn" => {
@@ -54,7 +57,8 @@ export async function useGetContentForType(properties: Props) {
             slug
           },
           label,
-          secondary
+          secondary,
+          onDarkBackground
         }
       },
       _type == "stats" => {
@@ -76,7 +80,8 @@ export async function useGetContentForType(properties: Props) {
             slug
           },
           label,
-          secondary
+          secondary,
+          onDarkBackground
         },
         "cats": cats[]->{
           _id,

@@ -19,9 +19,19 @@ export default defineType({
       type: 'boolean',
     }),
     defineField({
+      name: 'darkImageUsed',
+      title: 'Dark Image Used',
+      type: 'boolean',
+    }),
+    defineField({
+      name: 'nospace',
+      title: 'No space below',
+      type: 'boolean',
+    }),
+    defineField({
       name: 'image',
       type: 'image',
-      options: { hotspot: true },
+      options: { hotspot: false },
       fields: [
         defineField({
           name: 'alt',
@@ -43,7 +53,8 @@ export default defineType({
           fields: [
             defineField({ name: 'url', type: 'reference', to: [{ type: 'page' }], title: 'URL' }),
             defineField({ name: 'label', type: 'string', title: 'Label' }),
-            defineField({ name: 'secondary', type: 'boolean', title: 'Secondary Button' })
+            defineField({ name: 'secondary', type: 'boolean', title: 'Secondary Button' }),
+            defineField({ name: 'onDarkBackground', type: 'boolean', title: 'On Dark Background' })
           ]
         })
       ]

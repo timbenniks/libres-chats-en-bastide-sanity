@@ -16,7 +16,7 @@ defineProps(["encodeDataAttribute", "image", "title", "inTwoColumn"]);
       class="w-full h-auto"
       :class="{ absolute: !inTwoColumn }"
       fit="crop"
-      :alt="image.asset.alt || title"
+      :alt="image.asset.alt || title || ''"
     />
 
     <p

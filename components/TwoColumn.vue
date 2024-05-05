@@ -11,7 +11,7 @@ defineProps([
 </script>
 
 <template>
-  <div class="bg-yellow mb-12 p-12 md:px-24">
+  <div class="bg-yellow mb-12 py-12 px-8 md:px-24">
     <h3
       v-if="heading"
       class="font-serif text-blue text-4xl mb-4"

@@ -23,6 +23,8 @@ const sex = computed(() => {
     <nuxt-link
       :to="`/cats/${cat._id}`"
       class="block bg-black bg-opacity-5 aspect-[396/310] mb-2 rounded-lg"
+      :aria-label="cat.name"
+      :title="cat.name"
     >
       <nuxt-img
         v-if="cat.images"
@@ -34,6 +36,7 @@ const sex = computed(() => {
         loading="lazy"
         class="rounded-lg"
         fit="crop"
+        :alt="cat.name"
       />
     </nuxt-link>
 
