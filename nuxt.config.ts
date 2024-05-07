@@ -6,7 +6,8 @@ export default defineNuxtConfig({
     "@nuxtjs/tailwindcss",
     "@nuxt/fonts",
     "@nuxt/image",
-    "nuxt-jsonld"
+    "nuxt-jsonld",
+    "nuxt-icon"
   ],
 
   // routeRules: {
@@ -21,7 +22,7 @@ export default defineNuxtConfig({
     token: process.env.NUXT_SANITY_TOKEN,
     visualEditing: {
       studioUrl: process.env.NUXT_SANITY_VISUAL_EDITING_STUDIO_URL,
-      token: process.env.NUXT_SANITY_VISUAL_EDITING_TOKEN
+      token: process.env.NUXT_SANITY_VISUAL_EDITING_TOKEN,
     }
   },
 

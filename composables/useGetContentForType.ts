@@ -91,7 +91,9 @@ export async function useGetContentForType(properties: Props) {
             birthDate,
             sterilised,
             sex,
-            images
+            images,
+            showOnWebsite,
+            iconsOnCard,
           }
         }
       },

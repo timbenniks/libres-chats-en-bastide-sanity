@@ -10,6 +10,7 @@ export type Cat = {
   _id: string;
   _type: "cat";
   name: string;
+  showOnWebsite: boolean;
   birthDate: string;
   adoptionDate: string;
   chipped: boolean;
@@ -22,6 +23,7 @@ export type Cat = {
   reserved: boolean;
   adopted: boolean;
   deceased: boolean;
+  iconsOnCard: string[];
   sex: "female" | "male";
   images: {
     _type: "image";

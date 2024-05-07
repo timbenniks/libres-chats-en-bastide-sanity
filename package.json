@@ -11,17 +11,19 @@
   },
   "dependencies": {
     "@dipaktelangre/age-calculator": "^1.0.7",
-    "@nuxt/fonts": "^0.6.1",
-    "@nuxt/image": "^1.6.0",
+    "@nuxt/fonts": "^0.7.0",
+    "@nuxt/image": "^1.7.0",
     "@nuxtjs/sanity": "^1.11.3",
     "@nuxtjs/tailwindcss": "^6.12.0",
-    "@sanity/client": "^6.17.0",
+    "@sanity/client": "^6.17.2",
     "@tailwindcss/typography": "^0.5.13",
     "nuxt": "^3.11.2",
+    "nuxt-icon": "^0.6.10",
     "nuxt-jsonld": "^2.0.8",
     "ohash": "^1.1.3",
     "sanity-typed-queries": "^0.9.5",
-    "vue": "^3.4.26",
-    "vue-router": "^4.3.2"
+    "vue": "^3.4.27",
+    "vue-router": "^4.3.2",
+    "vue3-carousel": "^0.3.3"
   }
 }

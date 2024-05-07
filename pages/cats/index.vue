@@ -30,7 +30,12 @@ watch(filters, () => {
 const { data, pending } = await useAsyncData(
   hashQueryCacheKey(query, filters),
   async () => await sanity.fetch<Cat[]>(query.value, filters),
-  { watch: [filters] }
+  {
+    transform: (cats: Cat[]) => {
+      return cats.filter((cat: Cat) => cat.showOnWebsite);
+    },
+    watch: [filters],
+  }
 );
 
 function resetFilters() {
@@ -49,7 +54,6 @@ const filtered = computed(() => {
 <template>
   <GlobalHeader :large="false" />
   <RenderPage :data="page" :encodeDataAttribute="encodeDataAttribute" />
-
   <div
     class="w-full bg-lightBlue py-4 md:-mt-12 px-4 md:px-24 flex space-y-4 md:space-y-0 md:space-x-4 flex-col md:flex-row"
   >
@@ -114,17 +118,11 @@ const filtered = computed(() => {
       </select>
     </FilterSelect> -->
   </div>
-
   <div
     v-if="data && data.length > 0"
-    class="grid grid-cols-1 md:grid-cols-3 gap-8 my-4 px-4 md:px-24"
+    class="grid grid-cols-1 md:grid-cols-2 gap-8 my-4 px-4 md:px-24"
   >
-    <cat-card
-      v-for="(cat, index) in data"
-      :cat="cat"
-      :data-sanity="encodeDataAttribute?.([index, 'cat'])"
-      :key="cat._id"
-    />
+    <cat-card v-for="cat in data" :cat="cat" :key="cat._id" />
   </div>
   <div v-else>
     <p class="my-12 px-24">

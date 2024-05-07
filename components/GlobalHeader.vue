@@ -7,7 +7,7 @@ const navigation = await useNavigation();
   <div>
     <header
       :class="large ? 'py-8' : 'py-2 flex items-center'"
-      class="bg-lightBlue text-center px-4"
+      class="bg-lightBlue text-center md:px-24 px-4"
     >
       <nuxt-link to="/">
         <NuxtImg
@@ -27,7 +27,7 @@ const navigation = await useNavigation();
         Libres Chats en Bastide
       </p>
     </header>
-    <nav class="bg-yellow py-4 md:py-2 pl-4 uppercase font-bold">
+    <nav class="bg-yellow py-4 md:py-2 pl-4 uppercase font-bold md:px-24 px-4">
       <ul
         class="flex space-x-8 overflow-x-auto overflow-y-none whitespace-nowrap"
         :class="large ? 'justify-start md:justify-center ' : 'justify-start'"

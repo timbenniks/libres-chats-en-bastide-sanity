@@ -60,8 +60,8 @@ export default defineType({
           fields: [
             defineField({ name: 'url', type: 'reference', to: [{ type: 'page' }], title: 'URL' }),
             defineField({ name: 'label', type: 'string', title: 'Label' }),
-            defineField({ name: 'secondary', type: 'boolean', title: 'Secondary Button' }),
-            defineField({ name: 'onDarkBackground', type: 'boolean', title: 'On Dark Background' })
+            defineField({ name: 'secondary', type: 'boolean', title: 'Secondary Button', initialValue: false }),
+            defineField({ name: 'onDarkBackground', type: 'boolean', title: 'On Dark Background', initialValue: false })
           ]
         })
       ]

@@ -19,6 +19,18 @@ export default defineType({
       },
     }),
     defineField({
+      name: 'showOnWebsite',
+      title: 'Show On Website',
+      type: 'boolean',
+      initialValue: false
+    }),
+    defineField({
+      name: 'withFamily',
+      title: 'With Kids/Family',
+      type: 'boolean',
+      initialValue: false
+    }),
+    defineField({
       name: 'adoptionDate',
       title: 'Adoption Date',
       type: 'date',
@@ -30,31 +42,43 @@ export default defineType({
       name: 'chipped',
       title: 'Chipped',
       type: 'boolean',
+      initialValue: false
+    }),
+    defineField({
+      name: 'specialNeeds',
+      title: 'Special Needs',
+      type: 'boolean',
+      initialValue: false
     }),
     defineField({
       name: 'certificateHealthy',
       title: 'Health Certificate Available',
       type: 'boolean',
+      initialValue: false
     }),
     defineField({
       name: 'healthBook',
       title: 'Health Book Available',
       type: 'boolean',
+      initialValue: false
     }),
     defineField({
       name: 'sterilised',
       title: 'Sterilised',
       type: 'boolean',
+      initialValue: false
     }),
     defineField({
       name: 'withDogs',
       title: 'Gets Along with Dogs',
       type: 'boolean',
+      initialValue: false
     }),
     defineField({
       name: 'withCats',
       title: 'Gets Along with Other Cats',
       type: 'boolean',
+      initialValue: false
     }),
     defineField({
       name: 'character',
@@ -62,19 +86,28 @@ export default defineType({
       type: 'text',
     }),
     defineField({
+      name: 'aboutMe',
+      title: 'About the cat',
+      type: 'blockContent',
+      description: 'story on the site'
+    }),
+    defineField({
       name: 'reserved',
       title: 'Reserved',
       type: 'boolean',
+      initialValue: false
     }),
     defineField({
       name: 'adopted',
       title: 'Adopted',
       type: 'boolean',
+      initialValue: false
     }),
     defineField({
       name: 'deceased',
       title: 'Deceased',
       type: 'boolean',
+      initialValue: false
     }),
     defineField({
       name: 'sex',
@@ -150,7 +183,30 @@ export default defineType({
       name: 'deedOfTransfer',
       title: 'Deed of Transfer',
       type: 'boolean',
+      initialValue: false
     }),
+
+    defineField({
+      name: 'iconsOnCard',
+      title: 'Icons on card',
+      description: "These show on the cat card",
+      type: 'array',
+      of: [
+        defineField({
+          name: 'icon',
+          type: 'string',
+          options: {
+            list: [
+              { title: "Good with dogs", value: "withDogs" },
+              { title: "Good with cats", value: "withCats" },
+              { title: "Good with Family", value: "withFamily" },
+              { title: "Special Needs", value: "specialNeeds" }
+            ],
+          },
+        })
+      ]
+    }),
+
     defineField({
       name: 'weights',
       title: 'Weights',

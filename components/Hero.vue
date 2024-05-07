@@ -41,13 +41,13 @@ defineProps([
       <h1
         v-if="heading"
         class="font-serif text-4xl md:text-5xl mb-2 md:max-w-[500px]"
-        :class="darkImageUsed ? 'text-white' : 'text-blue'"
+        :class="darkImageUsed ? 'text-blue md:text-white' : 'text-blue'"
         :data-sanity="encodeDataAttribute?.(['heading'])"
       >
         {{ heading }}
       </h1>
       <p
-        :class="darkImageUsed ? 'text-white' : 'text-black'"
+        :class="darkImageUsed ? 'text-black md:text-white' : 'text-black'"
         v-if="description"
         :data-sanity="encodeDataAttribute?.(['description'])"
       >
