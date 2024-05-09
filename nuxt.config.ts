@@ -7,7 +7,9 @@ export default defineNuxtConfig({
     "@nuxt/fonts",
     "@nuxt/image",
     "nuxt-jsonld",
-    "nuxt-icon"
+    "nuxt-icon",
+    "@nuxtjs/robots",
+    "@nuxtjs/sitemap"
   ],
 
   // routeRules: {
@@ -38,5 +40,13 @@ export default defineNuxtConfig({
       { name: 'Inter', provider: 'google', weights: [400, 700] },
       { name: 'Afterglow', src: 'url(/afterglow.woff2)' }
     ]
-  }
+  },
+
+  site: {
+    url: 'https://libreschatsenbastide.fr/',
+  },
+
+  sitemap: {
+    sources: ['/api/sitemap'],
+  },
 })

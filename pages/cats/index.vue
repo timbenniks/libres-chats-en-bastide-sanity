@@ -11,6 +11,8 @@ const { data: page, encodeDataAttribute } = await useGetContentForType({
   type: "page",
 });
 
+useOGTags(page?.value);
+
 const sanity = useSanity();
 const colors = await useCatColors();
 const filters = reactive<CatFilters>({

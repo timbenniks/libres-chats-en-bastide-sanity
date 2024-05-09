@@ -6,6 +6,8 @@ const { data, encodeDataAttribute } = await useGetContentForType({
   slug: slug as string,
   type: "page",
 });
+
+useOGTags(data?.value);
 </script>
 <template>
   <GlobalHeader :large="false" />

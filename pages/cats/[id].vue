@@ -11,10 +11,16 @@ const { data, encodeDataAttribute } = await useGetContentForType({
   slug: "cat-page-template",
   type: "page",
 });
+
+useOGTags({
+  title: (cat.value as Cat).name,
+  desciription: "",
+  image: (cat.value as Cat).images[0],
+});
 </script>
 <template>
   <GlobalHeader :large="false" />
-  <CatDetail :cat="cat" />
+  <CatDetail :cat="cat as Cat" />
 
   <RenderPage :data="data" :encodeDataAttribute="encodeDataAttribute" />
 

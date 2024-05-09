@@ -5,7 +5,6 @@
 - Mobile nav with hamburger menu
 - Cat page
   - adopt formulier
-- SEO meta
 - robots
 - sitemap
 - Pages
