@@ -197,11 +197,11 @@ export default defineType({
           type: 'string',
           options: {
             list: [
-              { title: "Good with dogs", value: "withDogs" },
-              { title: "Good with cats", value: "withCats" },
-              { title: "Good with Family", value: "withFamily" },
-              { title: "Special Needs", value: "specialNeeds" }
-            ],
+              { title: "Good with dogs", value: "withDogs", _key: 'withDogs' },
+              { title: "Good with cats", value: "withCats", _key: 'withCats' },
+              { title: "Good with family", value: "withFamily", _key: 'withFamily' },
+              { title: "Special needs", value: "specialNeeds", _key: 'specialNeeds' },
+            ]
           },
         })
       ]

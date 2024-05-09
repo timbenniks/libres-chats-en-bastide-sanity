@@ -14,8 +14,8 @@ const { data: page, encodeDataAttribute } = await useGetContentForType({
 const sanity = useSanity();
 const colors = await useCatColors();
 const filters = reactive<CatFilters>({
-  withDogs: undefined,
-  withCats: undefined,
+  withDogs: false,
+  withCats: false,
   sex: "",
   color: "",
   date: "",
@@ -31,16 +31,16 @@ const { data, pending } = await useAsyncData(
   hashQueryCacheKey(query, filters),
   async () => await sanity.fetch<Cat[]>(query.value, filters),
   {
+    watch: [filters],
     transform: (cats: Cat[]) => {
       return cats.filter((cat: Cat) => cat.showOnWebsite);
     },
-    watch: [filters],
   }
 );
 
 function resetFilters() {
-  filters.withDogs = undefined;
-  filters.withCats = undefined;
+  filters.withDogs = false;
+  filters.withCats = false;
   filters.sex = "";
   filters.color = "";
   filters.date = "";
@@ -102,7 +102,7 @@ const filtered = computed(() => {
       réinitialiser les filtres
     </button>
 
-    <Loader class="mt-2" v-show="pending" />
+    <Loader class="!mt-2" v-show="pending" />
 
     <!-- <FilterSelect>
       <select
@@ -118,9 +118,10 @@ const filtered = computed(() => {
       </select>
     </FilterSelect> -->
   </div>
+
   <div
     v-if="data && data.length > 0"
-    class="grid grid-cols-1 md:grid-cols-2 gap-8 my-4 px-4 md:px-24"
+    class="grid grid-cols-1 md:grid-cols-2 gap-4 my-4 px-4 md:px-24"
   >
     <cat-card v-for="cat in data" :cat="cat" :key="cat._id" />
   </div>

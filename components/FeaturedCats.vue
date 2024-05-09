@@ -1,7 +1,4 @@
 <script setup lang="ts">
-import "vue3-carousel/dist/carousel.css";
-import { Carousel, Slide } from "vue3-carousel";
-
 const props = defineProps([
   "encodeDataAttribute",
   "heading",
@@ -32,27 +29,21 @@ const featuredCats = computed(() => {
     >
       {{ description }}
     </p>
-    <!-- <div class="grid grid-cols-1 md:grid-cols-3 gap-8 mb-8">
+    <div class="grid grid-cols-2 gap-4" v-if="featuredCats.length <= 2">
       <cat-card
         v-for="(cat, index) in featuredCats"
+        :key="cat._id"
         :cat="cat"
         :data-sanity="encodeDataAttribute?.([index, 'cat'])"
-        :key="cat._id"
       />
-    </div> -->
+    </div>
 
-    <client-only>
-      <carousel :items-to-show="2" :wrap-around="true">
-        <slide v-for="(cat, index) in featuredCats" :key="cat._id">
-          <div class="mx-4">
-            <cat-card
-              :cat="cat"
-              :data-sanity="encodeDataAttribute?.([index, 'cat'])"
-            />
-          </div>
-        </slide>
-      </carousel>
-    </client-only>
+    <div v-else>
+      <CatCarousel
+        :cats="featuredCats"
+        :encodeDataAttribute="encodeDataAttribute"
+      />
+    </div>
 
     <div
       class="flex space-y-2 sm:space-x-2 sm:space-y-0 flex-col sm:flex-row mt-4"

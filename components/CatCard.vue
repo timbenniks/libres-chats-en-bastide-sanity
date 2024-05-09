@@ -24,14 +24,9 @@ const sex = computed(() => {
 </script>
 
 <template>
-  <div class="bg-yellow rounded-lg p-4 pb-6 grid grid-cols-2 space-x-4">
-    <figure>
-      <nuxt-link
-        :to="`/cats/${cat._id}`"
-        class="block bg-black bg-opacity-5 aspect-[396/310] mb-2 rounded-lg"
-        :aria-label="cat.name"
-        :title="cat.name"
-      >
+  <div class="bg-yellow rounded-lg p-4 pb-6 text-left w-full">
+    <div class="grid grid-cols-1 md:grid-cols-2 gap-8">
+      <div class="block bg-black bg-opacity-5 aspect-[396/310] rounded-lg">
         <nuxt-img
           v-if="cat.images"
           provider="sanity"
@@ -40,27 +35,29 @@ const sex = computed(() => {
           height="310"
           sizes="sm:30vw"
           loading="lazy"
-          class="rounded-lg"
+          class="rounded-lg block"
           fit="crop"
           :alt="cat.name"
         />
-      </nuxt-link>
-    </figure>
-    <article class="text-left">
-      <h4 class="font-serif text-blue text-4xl" v-if="cat.name">
-        <nuxt-link :to="`/cats/${cat._id}`">
-          {{ cat.name }}
-        </nuxt-link>
-      </h4>
-      <p class="uppercase font-bold text-sm mb-6">
-        {{ age }}, <template v-if="cat.sterilised">stérilisée, </template>
-        {{ sex }}
-      </p>
-      <!-- <ul v-if="cat.iconsOnCard">
-        <CatCardIcon v-for="icon in cat.iconsOnCard" :key="icon" :icon="icon" />
-      </ul> -->
-      <CatCardIcon :icon="cat.iconsOnCard[0] as string" />
-      <Cta :cta="cta" :url="`/cats/${cat._id}`" />
-    </article>
+      </div>
+      <article>
+        <h4 class="font-serif text-blue text-5xl mb-2" v-if="cat.name">
+          <nuxt-link :to="`/cats/${cat._id}`">
+            {{ cat.name }}
+          </nuxt-link>
+        </h4>
+        <p class="uppercase font-bold mb-6">{{ age }}, {{ sex }}</p>
+        <ul v-if="cat.iconsOnCard" class="space-y-2">
+          <CatCardIcon
+            v-for="icon in cat.iconsOnCard"
+            :key="icon"
+            :icon="icon"
+          />
+        </ul>
+      </article>
+    </div>
+    <div class="mt-4">
+      <Cta class="inline-block" :cta="cta" :url="`/cats/${cat._id}`" />
+    </div>
   </div>
 </template>

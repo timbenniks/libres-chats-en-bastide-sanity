@@ -14,7 +14,7 @@ const { data, encodeDataAttribute } = await useGetContentForType({
 </script>
 <template>
   <GlobalHeader :large="false" />
-  <!-- <CatDetail :cat="cat" /> -->
+  <CatDetail :cat="cat" />
 
   <RenderPage :data="data" :encodeDataAttribute="encodeDataAttribute" />
 
