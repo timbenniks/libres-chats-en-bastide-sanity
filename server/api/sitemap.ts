@@ -7,7 +7,6 @@ export default defineSitemapEventHandler(async (e) => {
   const sanityPages = await sanity.fetch(groq`*[_type == "page"] { slug }`);
 
   const pages = sanityPages.map((page: any) => {
-    console.log(page)
     return asSitemapUrl({
       loc: `/${page.slug.current !== "home" ? page.slug.current : ""}`
     }) || []
