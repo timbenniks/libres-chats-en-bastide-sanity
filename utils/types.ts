@@ -10,6 +10,7 @@ export type Cat = {
   _id: string;
   _type: "cat";
   name: string;
+  aboutMe: any;
   showOnWebsite: boolean;
   birthDate: string;
   adoptionDate: string;

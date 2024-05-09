@@ -4,19 +4,11 @@ defineProps(["encodeDataAttribute", "heading", "description", "steps", "ctas"]);
 
 <template>
   <div class="mb-12 px-12 md:px-24 py-12 bg-[#D0E1FF]">
-    <h3
-      v-if="heading"
-      class="font-serif text-blue text-4xl mb-2 text-center"
-      :data-sanity="encodeDataAttribute?.(['heading'])"
-    >
+    <h3 v-if="heading" class="font-serif text-blue text-4xl mb-2 text-center">
       {{ heading }}
     </h3>
 
-    <p
-      v-if="description"
-      class="mb-4 mx-auto max-w-[600px] text-center"
-      :data-sanity="encodeDataAttribute?.(['description'])"
-    >
+    <p v-if="description" class="mb-4 mx-auto max-w-[600px] text-center">
       {{ description }}
     </p>
 

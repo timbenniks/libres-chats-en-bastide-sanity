@@ -12,18 +12,10 @@ defineProps([
 
 <template>
   <div class="bg-yellow mb-12 py-12 px-8 md:px-24">
-    <h3
-      v-if="heading"
-      class="font-serif text-blue text-4xl mb-4"
-      :data-sanity="encodeDataAttribute?.(['heading'])"
-    >
+    <h3 v-if="heading" class="font-serif text-blue text-4xl mb-4">
       {{ heading }}
     </h3>
-    <p
-      v-if="description"
-      class="mb-4 max-w-[600px]"
-      :data-sanity="encodeDataAttribute?.(['description'])"
-    >
+    <p v-if="description" class="mb-4 max-w-[600px]">
       {{ description }}
     </p>
 

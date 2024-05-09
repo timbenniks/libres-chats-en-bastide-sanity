@@ -17,16 +17,11 @@ const featuredCats = computed(() => {
     <h3
       v-if="heading"
       class="font-serif text-blue text-4xl mb-2 max-w-[600px] text-center md:text-left"
-      :data-sanity="encodeDataAttribute?.(['heading'])"
     >
       {{ heading }}
     </h3>
 
-    <p
-      v-if="description"
-      class="mb-4 max-w-[600px] text-center md:text-left"
-      :data-sanity="encodeDataAttribute?.(['description'])"
-    >
+    <p v-if="description" class="mb-4 max-w-[600px] text-center md:text-left">
       {{ description }}
     </p>
     <div class="grid grid-cols-2 gap-4" v-if="featuredCats.length <= 2">
@@ -34,15 +29,11 @@ const featuredCats = computed(() => {
         v-for="(cat, index) in featuredCats"
         :key="cat._id"
         :cat="cat"
-        :data-sanity="encodeDataAttribute?.([index, 'cat'])"
       />
     </div>
 
     <div v-else>
-      <CatCarousel
-        :cats="featuredCats"
-        :encodeDataAttribute="encodeDataAttribute"
-      />
+      <CatCarousel :cats="featuredCats" />
     </div>
 
     <div

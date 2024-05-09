@@ -18,10 +18,7 @@ const breakpoints = {
   <carousel :wrap-around="true" snapAlign="start" :breakpoints="breakpoints">
     <slide v-for="(cat, index) in cats" :key="cat._id">
       <div class="md:mr-4 w-full">
-        <cat-card
-          :cat="cat"
-          :data-sanity="encodeDataAttribute?.([index, 'cat'])"
-        />
+        <cat-card :cat="cat" />
       </div>
     </slide>
 

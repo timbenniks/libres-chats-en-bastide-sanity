@@ -32,7 +32,6 @@ defineProps([
       fit="crop"
       loading="eager"
       class="md:absolute w-full h-auto"
-      :data-sanity="encodeDataAttribute?.(['image'])"
     />
 
     <article
@@ -42,14 +41,12 @@ defineProps([
         v-if="heading"
         class="font-serif text-4xl md:text-5xl mb-2 md:max-w-[500px]"
         :class="darkImageUsed ? 'text-blue md:text-white' : 'text-blue'"
-        :data-sanity="encodeDataAttribute?.(['heading'])"
       >
         {{ heading }}
       </h1>
       <p
         :class="darkImageUsed ? 'text-black md:text-white' : 'text-black'"
         v-if="description"
-        :data-sanity="encodeDataAttribute?.(['description'])"
       >
         {{ description }}
       </p>
