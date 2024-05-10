@@ -23,7 +23,7 @@ export default defineNuxtConfig({
     apiVersion: '2021-03-25',
     token: process.env.NUXT_SANITY_TOKEN,
     visualEditing: {
-      stega: false,
+      stega: true,
       studioUrl: process.env.NUXT_SANITY_VISUAL_EDITING_STUDIO_URL,
       token: process.env.NUXT_SANITY_VISUAL_EDITING_TOKEN,
     }

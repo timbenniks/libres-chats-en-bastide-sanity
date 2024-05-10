@@ -1,11 +1,5 @@
 <script setup lang="ts">
-const props = defineProps([
-  "encodeDataAttribute",
-  "heading",
-  "description",
-  "cats",
-  "ctas",
-]);
+const props = defineProps(["heading", "description", "cats", "ctas"]);
 
 const featuredCats = computed(() => {
   return props.cats.filter((cat: any) => cat.showOnWebsite);
@@ -28,11 +22,7 @@ const featuredCats = computed(() => {
       class="grid grid-cols-1 md:grid-cols-2 gap-4"
       v-if="featuredCats.length <= 2"
     >
-      <cat-card
-        v-for="(cat, index) in featuredCats"
-        :key="cat._id"
-        :cat="cat"
-      />
+      <cat-card v-for="cat in featuredCats" :key="cat._id" :cat="cat" />
     </div>
 
     <div v-else>

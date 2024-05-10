@@ -1,10 +1,10 @@
 <script setup lang="ts">
 import type { Cat } from "@/utils/types";
 import { getAge } from "../utils/helpers";
+import { vercelStegaClean } from "@vercel/stega";
 
 const props = defineProps<{
   cat: Cat;
-  encodeDataAttribute?: any;
 }>();
 
 const age = computed(() => {
@@ -19,7 +19,7 @@ const cta = computed(() => {
 });
 
 const sex = computed(() => {
-  return props.cat.sex === "female" ? "femelle" : "mâle";
+  return vercelStegaClean(props.cat.sex) === "female" ? "femelle" : "mâle";
 });
 </script>
 

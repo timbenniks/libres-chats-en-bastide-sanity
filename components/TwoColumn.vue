@@ -1,13 +1,7 @@
 <script setup lang="ts">
 import { getComponentForName } from "~/utils/componentMapper";
 
-defineProps([
-  "heading",
-  "description",
-  "sideA",
-  "sideB",
-  "encodeDataAttribute",
-]);
+defineProps(["heading", "description", "sideA", "sideB"]);
 </script>
 
 <template>
@@ -27,7 +21,6 @@ defineProps([
           :key="(component?._id as string)"
           v-bind="component"
           :inTwoColumn="true"
-          :encodeDataAttribute="encodeDataAttribute"
         />
       </div>
       <div class="ideb">
@@ -37,7 +30,6 @@ defineProps([
           :key="(component?._id as string)"
           v-bind="component"
           :inTwoColumn="true"
-          :encodeDataAttribute="encodeDataAttribute"
         />
       </div>
     </div>

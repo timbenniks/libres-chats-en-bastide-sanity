@@ -2,7 +2,7 @@
 import "vue3-carousel/dist/carousel.css";
 import { Carousel, Navigation, Slide } from "vue3-carousel";
 
-defineProps(["cats", "encodeDataAttribute"]);
+defineProps(["cats"]);
 
 const breakpoints = {
   700: {

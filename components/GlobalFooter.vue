@@ -10,7 +10,7 @@ const navigation = await useNavigation();
     </footer>
     <nav class="bg-lightBlue py-4 text-center">
       <ul
-        class="justify-start md:justify-center ml-4 md:ml-0 flex space-x-8 overflow-x-auto overflow-y-none whitespace-nowrap mb-6 uppercase font-bold"
+        class="justify-center ml-4 md:ml-0 flex flex-col lg:flex-row space-y-4 lg:space-x-8 lg:space-y-0 mb-6 uppercase font-bold"
       >
         <li v-for="page in navigation.pages" :key="page._key">
           <nuxt-link

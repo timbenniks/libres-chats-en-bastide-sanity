@@ -1,7 +1,7 @@
 <script setup lang="ts">
 import { getComponentForName } from "~/utils/componentMapper";
 
-defineProps(["data", "encodeDataAttribute"]);
+defineProps(["data"]);
 </script>
 
 <template>
@@ -12,7 +12,6 @@ defineProps(["data", "encodeDataAttribute"]);
         :is="getComponentForName(component?._type)"
         :key="(component?._id as string)"
         v-bind="component"
-        :encodeDataAttribute="encodeDataAttribute"
       />
     </section>
   </main>

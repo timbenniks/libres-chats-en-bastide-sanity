@@ -1,5 +1,5 @@
 <script setup lang="ts">
-defineProps(["encodeDataAttribute", "image", "title", "inTwoColumn"]);
+defineProps(["image", "title", "inTwoColumn"]);
 </script>
 
 <template>

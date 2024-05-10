@@ -2,7 +2,7 @@
 const route = useRoute();
 const { slug } = route.params;
 
-const { data, encodeDataAttribute } = await useGetContentForType({
+const { data } = await useGetContentForType({
   slug: slug as string,
   type: "page",
 });
@@ -25,7 +25,7 @@ useJsonld({
       "@type": "ListItem",
       position: 2,
       item: {
-        "@id": `https://timbenniks.dev/${data.value.slug.current}`,
+        "@id": `https://libreschatsenbastice.fr/${data.value.slug.current}`,
         name: data.value.title,
       },
     },
@@ -34,6 +34,6 @@ useJsonld({
 </script>
 <template>
   <GlobalHeader :large="false" />
-  <RenderPage :data="data" :encodeDataAttribute="encodeDataAttribute" />
+  <RenderPage :data="data" />
   <GlobalFooter />
 </template>

@@ -1,5 +1,5 @@
 <script setup lang="ts">
-defineProps(["statBlocks", "encodeDataAttribute"]);
+defineProps(["statBlocks"]);
 </script>
 
 <template>
@@ -10,7 +10,6 @@ defineProps(["statBlocks", "encodeDataAttribute"]);
         :key="stat._key"
         :stat="stat"
         :index="index"
-        :encodeDataAttribute="encodeDataAttribute"
       />
     </div>
   </div>

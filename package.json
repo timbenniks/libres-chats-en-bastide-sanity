@@ -20,6 +20,7 @@
     "@sanity/client": "^6.17.2",
     "@sanity/image-url": "^1.0.2",
     "@tailwindcss/typography": "^0.5.13",
+    "@vercel/stega": "^0.1.2",
     "nuxt": "^3.11.2",
     "nuxt-icon": "^0.6.10",
     "nuxt-jsonld": "^2.0.8",

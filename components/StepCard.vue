@@ -1,5 +1,5 @@
 <script setup lang="ts">
-defineProps(["step", "index", "encodeDataAttribute"]);
+defineProps(["step", "index"]);
 </script>
 
 <template>

@@ -1,6 +1,5 @@
 <script setup lang="ts">
 defineProps([
-  "encodeDataAttribute",
   "heading",
   "description",
   "image",

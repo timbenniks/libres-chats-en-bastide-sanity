@@ -7,7 +7,7 @@ const { data: cat } = await useGetContentForType({
   type: "cat",
 });
 
-const { data, encodeDataAttribute } = await useGetContentForType({
+const { data } = await useGetContentForType({
   slug: "cat-page-template",
   type: "page",
 });
@@ -34,7 +34,7 @@ useJsonld({
       "@type": "ListItem",
       position: 2,
       item: {
-        "@id": `https://timbenniks.dev/cats`,
+        "@id": `https://libreschatsenbastice.fr/cats`,
         name: "Chats",
       },
     },
@@ -42,7 +42,9 @@ useJsonld({
       "@type": "ListItem",
       position: 2,
       item: {
-        "@id": `https://timbenniks.dev/chats/${(cat.value as Cat)._id}`,
+        "@id": `https://libreschatsenbastice.fr/chats/${
+          (cat.value as Cat)._id
+        }`,
         name: (cat.value as Cat).name,
       },
     },
@@ -53,7 +55,7 @@ useJsonld({
   <GlobalHeader :large="false" />
   <CatDetail :cat="cat as Cat" />
 
-  <RenderPage :data="data" :encodeDataAttribute="encodeDataAttribute" />
+  <RenderPage :data="data" />
 
   <GlobalFooter />
 </template>

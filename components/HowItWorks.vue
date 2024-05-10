@@ -1,5 +1,5 @@
 <script setup lang="ts">
-defineProps(["encodeDataAttribute", "heading", "description", "steps", "ctas"]);
+defineProps(["heading", "description", "steps", "ctas"]);
 </script>
 
 <template>
@@ -18,7 +18,6 @@ defineProps(["encodeDataAttribute", "heading", "description", "steps", "ctas"]);
         :key="step.step"
         :step="step"
         :index="index"
-        :encodeDataAttribute="encodeDataAttribute"
       />
     </div>
 

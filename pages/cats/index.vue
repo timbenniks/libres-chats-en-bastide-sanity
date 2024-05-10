@@ -6,7 +6,7 @@ import {
   checkFilterActive,
 } from "@/utils/helpers";
 
-const { data: page, encodeDataAttribute } = await useGetContentForType({
+const { data: page } = await useGetContentForType({
   slug: "cats",
   type: "page",
 });
@@ -29,7 +29,7 @@ useJsonld({
       "@type": "ListItem",
       position: 2,
       item: {
-        "@id": `https://timbenniks.dev/${page.value.slug.current}`,
+        "@id": `https://libreschatsenbastice.fr/chats`,
         name: page.value.title,
       },
     },
@@ -78,7 +78,7 @@ const filtered = computed(() => {
 
 <template>
   <GlobalHeader :large="false" />
-  <RenderPage :data="page" :encodeDataAttribute="encodeDataAttribute" />
+  <RenderPage :data="page" />
   <div
     class="w-full bg-lightBlue py-4 md:-mt-12 px-4 md:px-24 flex space-y-4 md:space-y-0 md:space-x-4 flex-col md:flex-row"
   >

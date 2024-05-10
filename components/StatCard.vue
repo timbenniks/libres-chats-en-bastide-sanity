@@ -1,5 +1,5 @@
 <script setup lang="ts">
-defineProps(["stat", "index", "encodeDataAttribute"]);
+defineProps(["stat", "index"]);
 </script>
 
 <template>

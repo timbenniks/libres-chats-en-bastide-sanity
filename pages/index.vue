@@ -1,5 +1,5 @@
 <script setup lang="ts">
-const { data, encodeDataAttribute } = await useGetContentForType({
+const { data } = await useGetContentForType({
   slug: "home",
   type: "page",
 });
@@ -23,6 +23,6 @@ useJsonld({
 </script>
 <template>
   <GlobalHeader :large="true" />
-  <RenderPage :data="data" :encodeDataAttribute="encodeDataAttribute" />
+  <RenderPage :data="data" />
   <GlobalFooter />
 </template>

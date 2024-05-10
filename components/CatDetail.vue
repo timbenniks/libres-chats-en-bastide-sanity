@@ -1,13 +1,13 @@
 <script setup lang="ts">
 import "vue3-carousel/dist/carousel.css";
 import { Carousel, Slide } from "vue3-carousel";
+import { vercelStegaClean } from "@vercel/stega";
 
 import type { Cat } from "@/utils/types";
 import { getAge } from "../utils/helpers";
 
 const props = defineProps<{
   cat: Cat;
-  encodeDataAttribute?: any;
 }>();
 
 const age = computed(() => {
@@ -15,7 +15,7 @@ const age = computed(() => {
 });
 
 const sex = computed(() => {
-  return props.cat.sex === "female" ? "femelle" : "mâle";
+  return vercelStegaClean(props.cat.sex) === "female" ? "femelle" : "mâle";
 });
 
 const currentSlide = ref(0);

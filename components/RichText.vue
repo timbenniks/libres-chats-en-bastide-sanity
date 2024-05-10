@@ -1,5 +1,5 @@
 <script setup lang="ts">
-defineProps(["heading", "richText", "inTwoColumn", "encodeDataAttribute"]);
+defineProps(["heading", "richText", "inTwoColumn"]);
 </script>
 
 <template>

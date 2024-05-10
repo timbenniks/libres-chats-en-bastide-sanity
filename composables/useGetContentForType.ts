@@ -103,7 +103,7 @@ export async function useGetContentForType(properties: Props) {
   if (properties.type === "cat") {
     query = groq`*[_type == "cat" && _id == $slug][0]`
   }
-  const { data, error, encodeDataAttribute } = await useSanityQuery(query, { slug: properties.slug });
+  const { data, error } = await useSanityQuery(query, { slug: properties.slug });
 
   if (!error) {
     throw createError({
@@ -114,6 +114,5 @@ export async function useGetContentForType(properties: Props) {
 
   return {
     data,
-    encodeDataAttribute
   }
 }
