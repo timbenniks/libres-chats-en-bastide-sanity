@@ -26,7 +26,7 @@ export default defineConfig({
     structureTool(),
     presentationTool({
       previewUrl: {
-        origin: process.env.SANITY_STUDIO_ORIGIN_URL,
+        origin: "https://libres-chats-en-bastide.netlify.app",
         previewMode: {
           enable: '/preview/enable',
           disable: '/preview/disable',
