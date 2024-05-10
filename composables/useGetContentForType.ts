@@ -70,6 +70,7 @@ export async function useGetContentForType(properties: Props) {
         _type == "richText" => {
           _type,
           heading,
+          centered,
           richText,
         },
         _type == "featuredCats" => {

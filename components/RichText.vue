@@ -1,9 +1,14 @@
 <script setup lang="ts">
-defineProps(["heading", "richText", "inTwoColumn"]);
+defineProps(["heading", "richText", "inTwoColumn", "centered"]);
 </script>
 
 <template>
-  <div :class="{ 'px-12 md:px-24 mb-12': !inTwoColumn }">
+  <div
+    :class="{
+      'px-12 md:px-24 mb-12': !inTwoColumn,
+      'mx-auto': centered,
+    }"
+  >
     <article class="max-w-screen-sm prose">
       <h3 v-if="heading" class="font-serif text-blue text-4xl mb-4">
         {{ heading }}

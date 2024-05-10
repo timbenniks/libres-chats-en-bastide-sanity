@@ -14,6 +14,13 @@ export default defineType({
       title: 'Rich Text',
       type: 'blockContent'
     }),
+    defineField({
+      name: 'centered',
+      title: 'Centered',
+      type: 'boolean',
+      description: "center the rich text on the screen",
+      initialValue: false
+    }),
   ],
   preview: {
     select: {
