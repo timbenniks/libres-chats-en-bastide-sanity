@@ -13,6 +13,29 @@ const { data: page, encodeDataAttribute } = await useGetContentForType({
 
 useOGTags(page?.value);
 
+useJsonld({
+  "@context": "https://schema.org",
+  "@type": "BreadcrumbList",
+  itemListElement: [
+    {
+      "@type": "ListItem",
+      position: 1,
+      item: {
+        "@id": "https://libreschatsenbastice.fr",
+        name: "D'accueil",
+      },
+    },
+    {
+      "@type": "ListItem",
+      position: 2,
+      item: {
+        "@id": `https://timbenniks.dev/${page.value.slug.current}`,
+        name: page.value.title,
+      },
+    },
+  ],
+});
+
 const sanity = useSanity();
 const colors = await useCatColors();
 const filters = reactive<CatFilters>({

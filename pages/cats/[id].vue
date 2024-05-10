@@ -17,6 +17,37 @@ useOGTags({
   desciription: "",
   image: (cat.value as Cat).images[0],
 });
+
+useJsonld({
+  "@context": "https://schema.org",
+  "@type": "BreadcrumbList",
+  itemListElement: [
+    {
+      "@type": "ListItem",
+      position: 1,
+      item: {
+        "@id": "https://libreschatsenbastice.fr",
+        name: "D'accueil",
+      },
+    },
+    {
+      "@type": "ListItem",
+      position: 2,
+      item: {
+        "@id": `https://timbenniks.dev/cats`,
+        name: "Chats",
+      },
+    },
+    {
+      "@type": "ListItem",
+      position: 2,
+      item: {
+        "@id": `https://timbenniks.dev/chats/${(cat.value as Cat)._id}`,
+        name: (cat.value as Cat).name,
+      },
+    },
+  ],
+});
 </script>
 <template>
   <GlobalHeader :large="false" />

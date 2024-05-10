@@ -38,7 +38,7 @@ export default defineNuxtConfig({
   fonts: {
     families: [
       { name: 'Inter', provider: 'google', weights: [400, 700] },
-      { name: 'Afterglow', src: 'url(/afterglow.woff2)' }
+      { name: 'Afterglow', src: 'url(/Afterglow-Regular.woff)', fallbacks: ['Georgia'] }
     ]
   },
 
