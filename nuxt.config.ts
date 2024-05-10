@@ -15,9 +15,9 @@ export default defineNuxtConfig({
     "@nuxtjs/sitemap"
   ],
 
-  // routeRules: {
-  //   '/**': { isr: false },
-  // },
+  routeRules: {
+    '/**': { isr: 600 },
+  },
 
   sanity: {
     globalHelper: true,
