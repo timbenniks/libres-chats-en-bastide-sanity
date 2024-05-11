@@ -2,7 +2,7 @@
 export default defineNuxtConfig({
   devtools: { enabled: false },
   experimental: {
-    crossOriginPrefetch: true
+    crossOriginPrefetch: false
   },
   modules: [
     "@nuxtjs/sanity",
