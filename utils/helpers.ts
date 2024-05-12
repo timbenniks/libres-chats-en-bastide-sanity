@@ -57,3 +57,12 @@ export function hashQueryCacheKey(query: any, filters: CatFilters) {
 export function checkFilterActive(filters: CatFilters) {
   return filters.withDogs || filters.withCats || filters.sex !== "" || filters.color !== "" || filters.date !== ""
 }
+
+export function getAssetDimensions(id: string) {
+  const dimensions = id.split('-')[2];
+
+  const [width, height] = dimensions.split('x').map((num: string) => parseInt(num, 10));
+  const aspectRatio = `aspect-[${width}/${height}]`;
+
+  return { width, height, aspectRatio };
+}

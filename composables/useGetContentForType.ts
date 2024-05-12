@@ -35,6 +35,8 @@ export async function useGetContentForType(properties: Props) {
           _type,
           heading,
           description,
+          background,
+          sizes,
           sideA,
           sideB
         },

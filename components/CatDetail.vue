@@ -4,7 +4,7 @@ import { Carousel, Slide } from "vue3-carousel";
 import { vercelStegaClean } from "@vercel/stega";
 
 import type { Cat } from "@/utils/types";
-import { getAge } from "../utils/helpers";
+import { getAge, getAssetDimensions } from "../utils/helpers";
 
 const props = defineProps<{
   cat: Cat;
@@ -31,70 +31,60 @@ function slideTo(val: number) {
 <template>
   <div class="px-4 md:px-24 my-12">
     <div class="grid grid-cols-1 md:grid-cols-2 gap-8">
-      <div class="carouseleeee">
-        <ClientOnly>
-          <div class="">
-            <Carousel
-              id="gallery"
-              :items-to-show="1"
-              :wrap-around="false"
-              v-model="currentSlide"
+      <ClientOnly>
+        <div class="md:flex md:space-x-4">
+          <div class="hidden md:block">
+            <div
+              class="block bg-black bg-opacity-5 aspect-[396/310] cursor-pointer mb-4"
+              @click="slideTo(catImage - 1)"
+              v-for="catImage in catImagesLength"
+              :key="cat.images[catImage - 1].asset._ref"
             >
-              <Slide
-                v-for="catImage in catImagesLength"
-                :key="cat.images[catImage - 1].asset._ref"
-              >
-                <div class="block bg-black bg-opacity-5 aspect-[396/310]">
-                  <nuxt-img
-                    v-if="cat.images"
-                    provider="sanity"
-                    :src="cat.images[catImage - 1].asset._ref"
-                    width="396"
-                    height="310"
-                    sizes="sm:50vw"
-                    loading="lazy"
-                    class="block"
-                    fit="crop"
-                    :alt="cat.name"
-                  />
-                </div>
-              </Slide>
-            </Carousel>
+              <nuxt-img
+                v-if="cat.images"
+                provider="sanity"
+                :src="cat.images[catImage - 1].asset._ref"
+                width="310"
+                height="310"
+                sizes="sm:50vw"
+                loading="lazy"
+                class="block"
+                fit="crop"
+                :alt="cat.name"
+              />
+            </div>
           </div>
-          <div>
-            <Carousel
-              id="thumbnails"
-              :items-to-show="3"
-              :wrap-around="true"
-              v-model="currentSlide"
-              ref="carousel"
+          <Carousel
+            :items-to-show="1"
+            :wrap-around="false"
+            v-model="currentSlide"
+          >
+            <Slide
+              v-for="catImage in catImagesLength"
+              :key="cat.images[catImage - 1].asset._ref"
             >
-              <Slide
-                v-for="catImage in catImagesLength"
-                :key="cat.images[catImage - 1].asset._ref"
-              >
-                <div
-                  class="block bg-black bg-opacity-5 aspect-[396/310] cursor-pointer"
-                  @click="slideTo(catImage - 1)"
-                >
-                  <nuxt-img
-                    v-if="cat.images"
-                    provider="sanity"
-                    :src="cat.images[catImage - 1].asset._ref"
-                    width="396"
-                    height="310"
-                    sizes="sm:50vw"
-                    loading="lazy"
-                    class="block"
-                    fit="crop"
-                    :alt="cat.name"
-                  />
-                </div>
-              </Slide>
-            </Carousel>
-          </div>
-        </ClientOnly>
-      </div>
+              <div class="block bg-black bg-opacity-5">
+                <nuxt-img
+                  v-if="cat.images"
+                  provider="sanity"
+                  :src="cat.images[catImage - 1].asset._ref"
+                  :width="
+                    getAssetDimensions(cat.images[catImage - 1].asset._ref)
+                      .width
+                  "
+                  :height="
+                    getAssetDimensions(cat.images[catImage - 1].asset._ref)
+                      .height
+                  "
+                  sizes="sm:100vw md:50vw"
+                  loading="lazy"
+                  :alt="cat.name"
+                />
+              </div>
+            </Slide>
+          </Carousel>
+        </div>
+      </ClientOnly>
 
       <article>
         <h4 class="font-serif text-blue text-5xl mb-2" v-if="cat.name">
@@ -110,6 +100,16 @@ function slideTo(val: number) {
             :icon="icon"
           />
         </ul>
+
+        <div
+          class="flex space-x-2 mb-4 items-center"
+          v-if="cat.reserved || cat.adopted || cat.deceased"
+        >
+          <p>Situation:</p>
+          <div class="cta light" v-if="cat.reserved">réservée</div>
+          <div class="cta light" v-if="cat.adopted">adoptée</div>
+          <div class="cta light" v-if="cat.deceased">décédé</div>
+        </div>
 
         <article class="max-w-screen-sm prose mb-4">
           <SanityContent :blocks="cat.aboutMe" />

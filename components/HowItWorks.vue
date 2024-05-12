@@ -3,7 +3,7 @@ defineProps(["heading", "description", "steps", "ctas"]);
 </script>
 
 <template>
-  <div class="mb-12 px-12 md:px-24 py-12 bg-[#D0E1FF]">
+  <div class="mb-12 px-12 md:px-24 py-12 bg-lightBlue bg-opacity-40">
     <h3 v-if="heading" class="font-serif text-blue text-4xl mb-2 text-center">
       {{ heading }}
     </h3>

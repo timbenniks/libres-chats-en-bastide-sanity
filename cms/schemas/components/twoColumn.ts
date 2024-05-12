@@ -13,7 +13,29 @@ export default defineType({
       name: 'description',
       type: 'string',
     }),
-
+    defineField({
+      name: 'background',
+      title: 'Background color',
+      type: 'string',
+      options: {
+        list: [
+          { title: 'Blue', value: 'bg-lightBlue' },
+          { title: 'Yellow', value: 'bg-yellow' }
+        ],
+      }
+    }),
+    defineField({
+      name: 'sizes',
+      title: 'Size of columns',
+      type: 'string',
+      options: {
+        list: [
+          { title: 'Both Sides are the same', value: 'sideSame' },
+          { title: 'Side A Bigger', value: 'sideABigger' },
+          { title: 'Side B Bigger', value: 'sideBBigger' },
+        ],
+      }
+    }),
     defineField({
       name: 'sideA',
       title: 'Side A',

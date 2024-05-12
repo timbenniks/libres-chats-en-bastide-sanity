@@ -6,10 +6,9 @@ defineProps(["heading", "richText", "inTwoColumn", "centered"]);
   <div
     :class="{
       'px-12 md:px-24 mb-12': !inTwoColumn,
-      'mx-auto': centered,
     }"
   >
-    <article class="max-w-screen-sm prose">
+    <article class="max-w-screen-sm prose" :class="{ 'mx-auto': centered }">
       <h3 v-if="heading" class="font-serif text-blue text-4xl mb-4">
         {{ heading }}
       </h3>
