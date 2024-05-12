@@ -1,9 +1,6 @@
 // https://nuxt.com/docs/api/configuration/nuxt-config
 export default defineNuxtConfig({
   devtools: { enabled: false },
-  experimental: {
-    crossOriginPrefetch: false
-  },
   modules: [
     "@nuxtjs/sanity",
     "@nuxtjs/tailwindcss",
@@ -15,9 +12,9 @@ export default defineNuxtConfig({
     "@nuxtjs/sitemap"
   ],
 
-  routeRules: {
-    '/**': { isr: 600 },
-  },
+  //routeRules: {
+  //  '/**': { isr: 600 },
+  //},
 
   sanity: {
     globalHelper: true,
