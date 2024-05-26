@@ -32,6 +32,14 @@ export default defineType({
       initialValue: false
     }),
     defineField({
+      name: 'opacity',
+      title: 'Opacity',
+      description: 'The opacity of the box behind the text',
+      type: 'number',
+      initialValue: 0,
+      validation: (Rule) => Rule.min(0).max(100).error('Opacity value must be between 0 and 100.')
+    }),
+    defineField({
       name: 'image',
       type: 'image',
       options: { hotspot: false },

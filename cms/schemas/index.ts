@@ -11,6 +11,7 @@ import howItWorks from './components/howItWorks'
 import stats from './components/stats'
 import richText from './components/richText'
 import twoColumn from './components/twoColumn'
+import helloasso from './components/helloasso'
 
 export const schemaTypes = [
   page,
@@ -26,5 +27,5 @@ export const schemaTypes = [
   twoColumn,
   navigation,
   blockContent,
-
+  helloasso
 ]

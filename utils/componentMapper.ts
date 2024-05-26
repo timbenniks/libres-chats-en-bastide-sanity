@@ -7,6 +7,7 @@ import howItWorks from "~/components/HowItWorks.vue";
 import stats from "~/components/Stats.vue";
 import richText from "~/components/RichText.vue"
 import twoColumn from "~/components/TwoColumn.vue"
+import helloAsso from "~/components/HelloAsso.vue"
 
 type Mapping = {
   [name: string]: Component
@@ -19,7 +20,8 @@ export const mapping: Mapping = {
   howItWorks,
   stats,
   richText,
-  twoColumn
+  twoColumn,
+  helloAsso
 };
 
 export function getComponentForName(name: string) {

@@ -18,8 +18,26 @@ export default defineType({
       name: 'centered',
       title: 'Centered',
       type: 'boolean',
-      description: "center the rich text on the screen",
+      description: "center the box on the screen",
       initialValue: false
+    }),
+    defineField({
+      name: 'textcentered',
+      title: 'Text Centered',
+      type: 'boolean',
+      description: "center the text in the box",
+      initialValue: false
+    }),
+    defineField({
+      name: 'background',
+      title: 'Background color',
+      type: 'string',
+      options: {
+        list: [
+          { title: 'Blue', value: 'bg-lightBlue' },
+          { title: 'Yellow', value: 'bg-yellow' }
+        ],
+      }
     }),
   ],
   preview: {

@@ -54,6 +54,10 @@ export default defineType({
         defineArrayMember({
           name: 'twoColumn',
           type: 'twoColumn',
+        }),
+        defineArrayMember({
+          name: 'helloAsso',
+          type: 'helloAsso',
         })
       ],
     }),

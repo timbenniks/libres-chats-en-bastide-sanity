@@ -13,7 +13,7 @@
   }
 
   .cta {
-    @apply px-4 py-2 bg-blue font-bold rounded-xl border-2 border-blue text-white !no-underline uppercase text-center;
+    @apply px-4 py-2 bg-blue font-bold rounded-xl border-2 border-blue text-white !no-underline text-center;
   }
 
   .cta:hover {

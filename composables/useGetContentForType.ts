@@ -74,6 +74,11 @@ export async function useGetContentForType(properties: Props) {
           heading,
           centered,
           richText,
+          background
+        },
+        _type == "helloAsso" => {
+          _type,
+          source,
         },
         _type == "featuredCats" => {
           _type,

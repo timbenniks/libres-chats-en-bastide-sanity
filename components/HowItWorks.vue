@@ -12,7 +12,7 @@ defineProps(["heading", "description", "steps", "ctas"]);
       {{ description }}
     </p>
 
-    <div class="grid grid-cols-1 md:grid-cols-3 gap-8 my-8">
+    <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-8 my-8">
       <StepCard
         v-for="(step, index) in steps"
         :key="step.step"
@@ -22,7 +22,7 @@ defineProps(["heading", "description", "steps", "ctas"]);
     </div>
 
     <div
-      class="flex space-y-2 sm:space-x-2 sm:space-y-0 flex-col sm:flex-row mt-4"
+      class="flex space-y-2 sm:space-x-2 sm:space-y-0 flex-col sm:flex-row mt-4 justify-center"
     >
       <Cta v-for="cta in ctas" :key="cta.label" :cta="cta" />
     </div>

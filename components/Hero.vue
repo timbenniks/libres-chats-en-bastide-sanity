@@ -7,6 +7,7 @@ defineProps([
   "small",
   "nospace",
   "darkImageUsed",
+  "opacity",
 ]);
 </script>
 
@@ -34,7 +35,8 @@ defineProps([
     />
 
     <article
-      class="mt-4 md:mt-0 md:absolute left-24 top-2/4 md:-translate-y-2/4 md:max-w-[500px] px-12 md:px-0 text-center md:text-left"
+      class="bg-opacity-50 p-8 mt-4 md:mt-0 md:absolute left-24 top-2/4 md:-translate-y-2/4 md:max-w-[500px] text-center md:text-left"
+      :style="`background-color: rgba(0, 0, 0, ${(opacity || 0) / 100});`"
     >
       <h1
         v-if="heading"
